@@ -1,16 +1,15 @@
-# React + Vite
+# UW-Madison Club Tennis Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This website serves as the digital hub for the UW-Madison Club Tennis team. It provides information about the club and offers an interactive shopping experience for team merchandise.
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The UW-Madison Club Tennis website includes:
 
-## React Compiler
+- **Home** - Welcome page with latest news and updates about the club
+- **About Us** - Information about the club's mission, what we offer, and our leadership team
+- **Events** - Schedule of practices, tryouts, and upcoming tournaments
+- **Contact Us** - Contact form and information for reaching the club
+- **Merch** - Online store where visitors can browse and purchase club merchandise to support the team
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The site is built with React and React Bootstrap, featuring a responsive design that works on all devices.
