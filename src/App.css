@@ -4,130 +4,34 @@
   flex-direction: column;
 }
 
-.header {
-  background-color: #c5050c;
-  color: white;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.header-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.site-title {
-  margin: 0;
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-.nav-tabs {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.tab {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-.tab:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.tab.active {
-  background-color: white;
-  color: #c5050c;
-  font-weight: bold;
-}
-
-.cart-icon {
-  position: relative;
-}
-
-.cart-button {
-  background-color: white;
-  color: #c5050c;
-  border: none;
-  padding: 0.75rem 1rem;
-  font-size: 1.5rem;
-  cursor: pointer;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  transition: transform 0.2s ease;
-  width: 50px;
-  height: 50px;
-}
-
-.cart-button:hover {
-  transform: scale(1.1);
-}
-
-.cart-count {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: #ffc107;
-  color: #000;
-  border-radius: 50%;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.75rem;
-  font-weight: bold;
-  min-width: 20px;
-  text-align: center;
-}
-
 .main-content {
   flex: 1;
-  max-width: 1200px;
   width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
 }
 
-.page-container {
-  text-align: center;
-  padding: 2rem;
+/* Custom brand colors */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-.page-container h2 {
-  color: #c5050c;
-  margin-bottom: 1rem;
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-@media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    align-items: center;
-  }
+/* Card hover effects */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-  .site-title {
-    font-size: 1.5rem;
-  }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-  .nav-tabs {
-    justify-content: center;
-  }
-
-  .cart-icon {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-  }
+/* Footer styling */
+footer {
+  margin-top: auto;
 }
