@@ -24,12 +24,12 @@ function ContactUs() {
   };
 
   return (
-    <Container className="my-5">
+    <Container fluid className="my-5">
       <h1 className="mb-4">Contact Us</h1>
 
       <Row>
         {/* Contact Form */}
-        <Col md={8}>
+        <Col lg={8}>
           <Card>
             <Card.Body>
               <h3 className="mb-3">Send us a Message</h3>
@@ -92,7 +92,7 @@ function ContactUs() {
         </Col>
 
         {/* Contact Information */}
-        <Col md={4}>
+        <Col lg={4}>
           <Card className="mb-3">
             <Card.Body>
               <h4>Contact Information</h4>

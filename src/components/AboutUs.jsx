@@ -25,7 +25,7 @@ function AboutUs() {
   ];
 
   return (
-    <Container className="my-5">
+    <Container fluid className="my-5">
       <h1 className="mb-4">About UW-Madison Club Tennis</h1>
 
       {/* Mission Section */}

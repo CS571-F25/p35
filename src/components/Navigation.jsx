@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Navigation() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
-      <Container>
+      <Container fluid>
         <Navbar.Brand as={Link} to="/">
           UW-Madison Club Tennis
         </Navbar.Brand>

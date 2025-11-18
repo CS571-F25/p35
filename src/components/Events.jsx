@@ -68,59 +68,43 @@ function Events() {
   ];
 
   return (
-    <Container className="my-5">
+    <Container fluid className="my-5">
       <h1 className="mb-4">Events</h1>
 
       <Tabs defaultActiveKey="all" className="mb-4">
         <Tab eventKey="all" title="All Events">
-          <Row>
-            <Col>
-              <h3 className="mb-3">Practices</h3>
-              {practices.map((event, index) => (
-                <EventCard key={index} {...event} />
-              ))}
+          <h3 className="mb-3">Practices</h3>
+          {practices.map((event, index) => (
+            <EventCard key={index} {...event} />
+          ))}
 
-              <h3 className="mb-3 mt-4">Tryouts</h3>
-              {tryouts.map((event, index) => (
-                <EventCard key={index} {...event} />
-              ))}
+          <h3 className="mb-3 mt-4">Tryouts</h3>
+          {tryouts.map((event, index) => (
+            <EventCard key={index} {...event} />
+          ))}
 
-              <h3 className="mb-3 mt-4">Tournaments</h3>
-              {tournaments.map((event, index) => (
-                <EventCard key={index} {...event} />
-              ))}
-            </Col>
-          </Row>
+          <h3 className="mb-3 mt-4">Tournaments</h3>
+          {tournaments.map((event, index) => (
+            <EventCard key={index} {...event} />
+          ))}
         </Tab>
 
         <Tab eventKey="practices" title="Practices">
-          <Row>
-            <Col>
-              {practices.map((event, index) => (
-                <EventCard key={index} {...event} />
-              ))}
-            </Col>
-          </Row>
+          {practices.map((event, index) => (
+            <EventCard key={index} {...event} />
+          ))}
         </Tab>
 
         <Tab eventKey="tryouts" title="Tryouts">
-          <Row>
-            <Col>
-              {tryouts.map((event, index) => (
-                <EventCard key={index} {...event} />
-              ))}
-            </Col>
-          </Row>
+          {tryouts.map((event, index) => (
+            <EventCard key={index} {...event} />
+          ))}
         </Tab>
 
         <Tab eventKey="tournaments" title="Tournaments">
-          <Row>
-            <Col>
-              {tournaments.map((event, index) => (
-                <EventCard key={index} {...event} />
-              ))}
-            </Col>
-          </Row>
+          {tournaments.map((event, index) => (
+            <EventCard key={index} {...event} />
+          ))}
         </Tab>
       </Tabs>
 

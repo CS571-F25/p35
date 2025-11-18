@@ -60,7 +60,7 @@ function Merch() {
   ];
 
   return (
-    <Container className="my-5">
+    <Container fluid className="my-5">
       <h1 className="mb-4">Club Merchandise</h1>
 
       <Alert variant="info">

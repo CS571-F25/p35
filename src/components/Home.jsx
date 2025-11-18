@@ -27,7 +27,7 @@ function Home() {
     <div>
       {/* Hero Section */}
       <div className="bg-primary text-white text-center py-5">
-        <Container>
+        <Container fluid>
           <h1 className="display-4">Welcome to UW-Madison Club Tennis</h1>
           <p className="lead">Join us for competitive play, skill development, and community!</p>
           <Button variant="light" size="lg" href="/events">View Upcoming Events</Button>
@@ -35,7 +35,7 @@ function Home() {
       </div>
 
       {/* Featured Image Section */}
-      <Container className="my-5">
+      <Container fluid className="my-5">
         <Row>
           <Col>
             <img
@@ -48,7 +48,7 @@ function Home() {
       </Container>
 
       {/* News Section */}
-      <Container className="my-5">
+      <Container fluid className="my-5">
         <h2 className="mb-4">Latest News</h2>
         <Row>
           {newsItems.map((news, index) => (
@@ -65,7 +65,7 @@ function Home() {
       </Container>
 
       {/* Quick Info Section */}
-      <Container className="my-5">
+      <Container fluid className="my-5">
         <Row>
           <Col md={6}>
             <h3>About Our Club</h3>

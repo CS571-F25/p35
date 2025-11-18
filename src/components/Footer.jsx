@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 function Footer() {
   return (
     <footer className="bg-dark text-light py-4 mt-5">
-      <Container>
+      <Container fluid>
         <Row>
           <Col md={4}>
             <h5>UW-Madison Club Tennis</h5>
