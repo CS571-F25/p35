@@ -6,7 +6,7 @@ import App from './App.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/p35">
     <App />
   </BrowserRouter>
 )
