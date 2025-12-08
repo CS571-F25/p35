@@ -1,7 +1,11 @@
 import { Navbar, Nav, Container, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useShop } from '../contexts/ShopContext';
 
 function Navigation() {
+  const { getCartItemCount } = useShop();
+  const cartCount = getCartItemCount();
+
   return (
     <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
       <Container fluid>
@@ -19,7 +23,7 @@ function Navigation() {
           </Nav>
           <Nav>
             <Nav.Link as={Link} to="/cart">
-              🛒 Cart <Badge bg="danger">0</Badge>
+              🛒 Cart <Badge bg="danger">{cartCount}</Badge>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
