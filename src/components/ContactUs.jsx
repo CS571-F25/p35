@@ -32,9 +32,9 @@ function ContactUs() {
         <Col lg={8}>
           <Card>
             <Card.Body>
-              <h3 className="mb-3">Send us a Message</h3>
+              <h2 className="mb-3">Send us a Message</h2>
               <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3" controlId="contactFormName">
                   <Form.Label>Name</Form.Label>
                   <Form.Control
                     type="text"
@@ -46,7 +46,7 @@ function ContactUs() {
                   />
                 </Form.Group>
 
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3" controlId="contactFormEmail">
                   <Form.Label>Email</Form.Label>
                   <Form.Control
                     type="email"
@@ -58,7 +58,7 @@ function ContactUs() {
                   />
                 </Form.Group>
 
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3" controlId="contactFormSubject">
                   <Form.Label>Subject</Form.Label>
                   <Form.Control
                     type="text"
@@ -70,7 +70,7 @@ function ContactUs() {
                   />
                 </Form.Group>
 
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3" controlId="contactFormMessage">
                   <Form.Label>Message</Form.Label>
                   <Form.Control
                     as="textarea"
@@ -95,7 +95,7 @@ function ContactUs() {
         <Col lg={4}>
           <Card className="mb-3">
             <Card.Body>
-              <h4>Contact Information</h4>
+              <h2>Contact Information</h2>
               <hr />
               <p>
                 <strong>Email:</strong><br />
@@ -116,7 +116,7 @@ function ContactUs() {
 
           <Card className="mb-3">
             <Card.Body>
-              <h4>Office Hours</h4>
+              <h2>Office Hours</h2>
               <hr />
               <p>
                 <strong>During Semester:</strong><br />
@@ -132,7 +132,7 @@ function ContactUs() {
 
           <Card>
             <Card.Body>
-              <h4>Social Media</h4>
+              <h2>Social Media</h2>
               <hr />
               <p className="mb-1">
                 <strong>Instagram:</strong> @uwclubtennis
@@ -153,10 +153,10 @@ function ContactUs() {
         <Col>
           <Card>
             <Card.Body>
-              <h3 className="mb-3">Find Us</h3>
+              <h2 className="mb-3">Find Us</h2>
               <img
                 src="https://via.placeholder.com/1000x400?text=Map+Location+-+Add+Your+Own"
-                alt="Map Placeholder"
+                alt="Map showing location of Nielsen Tennis Stadium at UW-Madison campus"
                 className="img-fluid rounded"
               />
             </Card.Body>

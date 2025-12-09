@@ -40,7 +40,7 @@ function Home() {
           <Col>
             <img
               src="https://via.placeholder.com/1200x400?text=Team+Photo+-+Add+Your+Own"
-              alt="Team Photo Placeholder"
+              alt="UW-Madison Club Tennis team group photo at practice"
               className="img-fluid rounded"
             />
           </Col>

@@ -85,7 +85,7 @@ function Cart() {
           Clear Cart
         </Button>
         <div className="text-end">
-          <h4>Total: ${getCartTotal().toFixed(2)}</h4>
+          <h2>Total: ${getCartTotal().toFixed(2)}</h2>
           <Button variant="success" size="lg" className="mt-2">
             Proceed to Checkout
           </Button>

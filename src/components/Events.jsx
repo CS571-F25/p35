@@ -73,17 +73,17 @@ function Events() {
 
       <Tabs defaultActiveKey="all" className="mb-4">
         <Tab eventKey="all" title="All Events">
-          <h3 className="mb-3">Practices</h3>
+          <h2 className="mb-3">Practices</h2>
           {practices.map((event, index) => (
             <EventCard key={index} {...event} />
           ))}
 
-          <h3 className="mb-3 mt-4">Tryouts</h3>
+          <h2 className="mb-3 mt-4">Tryouts</h2>
           {tryouts.map((event, index) => (
             <EventCard key={index} {...event} />
           ))}
 
-          <h3 className="mb-3 mt-4">Tournaments</h3>
+          <h2 className="mb-3 mt-4">Tournaments</h2>
           {tournaments.map((event, index) => (
             <EventCard key={index} {...event} />
           ))}
@@ -111,26 +111,26 @@ function Events() {
       {/* Event Photo Gallery */}
       <Row className="mt-5">
         <Col>
-          <h3 className="mb-3">Event Photos</h3>
+          <h2 className="mb-3">Event Photos</h2>
           <Row>
             <Col md={4} className="mb-3">
               <img
                 src="https://via.placeholder.com/400x300?text=Tournament+Action"
-                alt="Tournament Photo"
+                alt="Club tennis team members competing in tournament action shot"
                 className="img-fluid rounded"
               />
             </Col>
             <Col md={4} className="mb-3">
               <img
                 src="https://via.placeholder.com/400x300?text=Practice+Session"
-                alt="Practice Photo"
+                alt="Team members practicing tennis drills at practice session"
                 className="img-fluid rounded"
               />
             </Col>
             <Col md={4} className="mb-3">
               <img
                 src="https://via.placeholder.com/400x300?text=Team+Competition"
-                alt="Competition Photo"
+                alt="Club tennis team during competitive match event"
                 className="img-fluid rounded"
               />
             </Col>

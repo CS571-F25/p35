@@ -33,7 +33,7 @@ function AboutUs() {
         <Col>
           <Card>
             <Card.Body>
-              <h3>Our Mission</h3>
+              <h2>Our Mission</h2>
               <p>
                 UW-Madison Club Tennis is dedicated to fostering a community of tennis
                 enthusiasts who share a passion for the sport. We provide opportunities
@@ -48,10 +48,10 @@ function AboutUs() {
       {/* Team Photo Section */}
       <Row className="mb-5">
         <Col>
-          <h3 className="mb-3">Team Photo</h3>
+          <h2 className="mb-3">Team Photo</h2>
           <img
             src="https://via.placeholder.com/1000x600?text=Team+Group+Photo+-+Add+Your+Own"
-            alt="Team Group Photo Placeholder"
+            alt="Complete UW-Madison Club Tennis team group photo with all members"
             className="img-fluid rounded"
           />
         </Col>
@@ -60,7 +60,7 @@ function AboutUs() {
       {/* What We Offer Section */}
       <Row className="mb-5">
         <Col md={6}>
-          <h3>What We Offer</h3>
+          <h2>What We Offer</h2>
           <ul>
             <li>Weekly practice sessions for all skill levels</li>
             <li>Competitive tournament opportunities</li>
@@ -70,7 +70,7 @@ function AboutUs() {
           </ul>
         </Col>
         <Col md={6}>
-          <h3>Who Can Join</h3>
+          <h2>Who Can Join</h2>
           <p>
             We welcome all UW-Madison students, regardless of skill level!
             Whether you're a complete beginner or have years of experience,
@@ -89,12 +89,12 @@ function AboutUs() {
       {/* Leadership Team */}
       <Row className="mb-5">
         <Col>
-          <h3 className="mb-4">Leadership Team</h3>
+          <h2 className="mb-4">Leadership Team</h2>
           <Row>
             {teamMembers.map((member, index) => (
               <Col md={3} key={index} className="mb-3">
                 <Card className="text-center">
-                  <Card.Img variant="top" src={member.image} />
+                  <Card.Img variant="top" src={member.image} alt={`${member.role} headshot photo`} />
                   <Card.Body>
                     <Card.Title>{member.name}</Card.Title>
                     <Card.Text className="text-muted">{member.role}</Card.Text>
@@ -111,7 +111,7 @@ function AboutUs() {
         <Col>
           <Card>
             <Card.Body>
-              <h3>Our History</h3>
+              <h2>Our History</h2>
               <p>
                 Founded in [Year], UW-Madison Club Tennis has grown from a small
                 group of tennis enthusiasts to one of the most active club sports

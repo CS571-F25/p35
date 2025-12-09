@@ -6,11 +6,11 @@ function Footer() {
       <Container fluid>
         <Row>
           <Col md={4}>
-            <h5>UW-Madison Club Tennis</h5>
+            <h2>UW-Madison Club Tennis</h2>
             <p>Building community through tennis</p>
           </Col>
           <Col md={4}>
-            <h5>Quick Links</h5>
+            <h2>Quick Links</h2>
             <ul className="list-unstyled">
               <li><a href="/" className="text-light text-decoration-none">Home</a></li>
               <li><a href="/about" className="text-light text-decoration-none">About Us</a></li>
@@ -18,7 +18,7 @@ function Footer() {
             </ul>
           </Col>
           <Col md={4}>
-            <h5>Connect With Us</h5>
+            <h2>Connect With Us</h2>
             <p>Follow us on social media for updates</p>
           </Col>
         </Row>
