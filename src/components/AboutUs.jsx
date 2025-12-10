@@ -48,11 +48,11 @@ function AboutUs() {
       {/* Team Photo Section */}
       <Row className="mb-5">
         <Col>
-          <h2 className="mb-3">Team Photo</h2>
           <img
             src="/p35/images/WiscoTeamPhoto.jpg"
             alt="Complete UW-Madison Club Tennis team group photo with all members"
             className="img-fluid rounded"
+            style={{ width: '100%', height: 'auto' }}
           />
         </Col>
       </Row>

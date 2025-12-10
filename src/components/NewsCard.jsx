@@ -1,9 +1,8 @@
 import { Card } from 'react-bootstrap';
 
-function NewsCard({ title, date, content, image }) {
+function NewsCard({ title, date, content}) {
   return (
     <Card className="mb-3">
-      {image && <Card.Img variant="top" src={image} alt={title} />}
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{date}</Card.Subtitle>

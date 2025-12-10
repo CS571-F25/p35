@@ -149,7 +149,7 @@ function ContactUs() {
             <Card.Body>
               <h2 className="mb-3">Find Us</h2>
               <img
-                src="https://via.placeholder.com/1000x400?text=Map+Location+-+Add+Your+Own"
+                src="/p35/images/WiscoMap.jpg"
                 alt="Map showing location of Nielsen Tennis Stadium at UW-Madison campus"
                 className="img-fluid rounded"
               />

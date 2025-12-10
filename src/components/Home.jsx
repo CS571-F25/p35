@@ -7,26 +7,23 @@ function Home() {
       title: "Spring Tournament Success!",
       date: "March 15, 2024",
       content: "Our team placed 2nd in the regional spring tournament. Great job everyone!",
-      image: "https://via.placeholder.com/400x200?text=Tournament+Photo"
     },
     {
       title: "New Practice Schedule",
       date: "March 10, 2024",
       content: "Practice times have been updated for the spring semester. Check the Events page for details.",
-      image: "https://via.placeholder.com/400x200?text=Practice+Schedule"
     },
     {
       title: "Welcome New Members!",
       date: "March 1, 2024",
       content: "We're excited to welcome 15 new members to the club this semester!",
-      image: "https://via.placeholder.com/400x200?text=Welcome"
     }
   ];
 
   return (
     <div>
       {/* Hero Section */}
-      <div className="bg-primary text-white text-center py-5">
+      <div className="bg-danger text-white text-center py-5">
         <Container fluid>
           <h1 className="display-4">Welcome to UW-Madison Club Tennis</h1>
           <p className="lead">Join us for competitive play, skill development, and community!</p>
@@ -42,6 +39,7 @@ function Home() {
               src="/p35/images/WiscoTeamPhoto.jpg"
               alt="UW-Madison Club Tennis team group photo at practice"
               className="img-fluid rounded"
+              style={{ width: '100%', height: 'auto' }}
             />
           </Col>
         </Row>
@@ -57,7 +55,6 @@ function Home() {
                 title={news.title}
                 date={news.date}
                 content={news.content}
-                image={news.image}
               />
             </Col>
           ))}
