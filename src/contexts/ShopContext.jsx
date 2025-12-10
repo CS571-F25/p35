@@ -21,6 +21,12 @@ export function ShopProvider({ children }) {
     return savedLikes ? JSON.parse(savedLikes) : [];
   });
 
+  // Track event headcounts globally (cumulative across all users/sessions)
+  const [eventHeadcounts, setEventHeadcounts] = useState(() => {
+    const savedHeadcounts = sessionStorage.getItem('eventHeadcounts');
+    return savedHeadcounts ? JSON.parse(savedHeadcounts) : {};
+  });
+
   useEffect(() => {
     sessionStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
@@ -29,12 +35,19 @@ export function ShopProvider({ children }) {
     sessionStorage.setItem('likes', JSON.stringify(likes));
   }, [likes]);
 
+  useEffect(() => {
+    sessionStorage.setItem('eventHeadcounts', JSON.stringify(eventHeadcounts));
+  }, [eventHeadcounts]);
+
   const addToCart = (item) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find((cartItem) => cartItem.name === item.name);
+      const itemId = item.title || item.name; // Events use 'title', products use 'name'
+      const existingItem = prevCart.find((cartItem) =>
+        (cartItem.title || cartItem.name) === itemId
+      );
       if (existingItem) {
         return prevCart.map((cartItem) =>
-          cartItem.name === item.name
+          (cartItem.title || cartItem.name) === itemId
             ? { ...cartItem, quantity: cartItem.quantity + 1 }
             : cartItem
         );
@@ -43,20 +56,47 @@ export function ShopProvider({ children }) {
     });
   };
 
-  const removeFromCart = (itemName) => {
-    setCart((prevCart) => prevCart.filter((item) => item.name !== itemName));
+  const addEventToCart = (event) => {
+    addToCart({ ...event, itemType: 'event' });
   };
 
-  const updateQuantity = (itemName, quantity) => {
+  const removeFromCart = (itemId) => {
+    setCart((prevCart) => prevCart.filter((item) =>
+      (item.title || item.name) !== itemId
+    ));
+  };
+
+  const updateQuantity = (itemId, quantity) => {
     if (quantity <= 0) {
-      removeFromCart(itemName);
+      removeFromCart(itemId);
       return;
     }
     setCart((prevCart) =>
       prevCart.map((item) =>
-        item.name === itemName ? { ...item, quantity } : item
+        (item.title || item.name) === itemId ? { ...item, quantity } : item
       )
     );
+  };
+
+  const confirmEventRsvps = () => {
+    // Move event RSVPs from cart to headcount when user checks out
+    const eventRsvps = cart.filter(item => item.itemType === 'event');
+
+    setEventHeadcounts((prevHeadcounts) => {
+      const newHeadcounts = { ...prevHeadcounts };
+      eventRsvps.forEach(event => {
+        const eventId = event.title;
+        newHeadcounts[eventId] = (newHeadcounts[eventId] || 0) + event.quantity;
+      });
+      return newHeadcounts;
+    });
+
+    // Remove events from cart after confirming
+    setCart((prevCart) => prevCart.filter(item => item.itemType !== 'event'));
+  };
+
+  const getEventHeadcount = (eventTitle) => {
+    return eventHeadcounts[eventTitle] || 0;
   };
 
   const clearCart = () => {
@@ -81,13 +121,16 @@ export function ShopProvider({ children }) {
   };
 
   const getCartTotal = () => {
-    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    return cart
+      .filter(item => item.itemType !== 'event')
+      .reduce((total, item) => total + (item.price || 0) * item.quantity, 0);
   };
 
   const value = {
     cart,
     likes,
     addToCart,
+    addEventToCart,
     removeFromCart,
     updateQuantity,
     clearCart,
@@ -95,6 +138,8 @@ export function ShopProvider({ children }) {
     isLiked,
     getCartItemCount,
     getCartTotal,
+    confirmEventRsvps,
+    getEventHeadcount,
   };
 
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
