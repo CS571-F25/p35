@@ -1,22 +1,23 @@
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import NewsCard from './NewsCard';
+import StatCard from './StatCard';
 
 function Home() {
   const newsItems = [
     {
       title: "Spring Tournament Success!",
-      date: "March 15, 2024",
+      date: "March 15, 2025",
       content: "Our team placed 2nd in the regional spring tournament. Great job everyone!",
     },
     {
       title: "New Practice Schedule",
-      date: "March 10, 2024",
+      date: "March 10, 2025",
       content: "Practice times have been updated for the spring semester. Check the Events page for details.",
     },
     {
       title: "Welcome New Members!",
-      date: "March 1, 2024",
+      date: "March 1, 2025",
       content: "We're excited to welcome 15 new members to the club this semester!",
     }
   ];
@@ -41,6 +42,45 @@ function Home() {
               alt="UW-Madison Club Tennis team group photo at practice"
               className="img-fluid rounded"
               style={{ width: '100%', height: 'auto' }}
+            />
+          </Col>
+        </Row>
+      </Container>
+
+      {/* Stats Section */}
+      <Container fluid className="my-5">
+        <h2 className="mb-4 text-center">Club at a Glance</h2>
+        <Row className="g-4">
+          <Col md={3} sm={6}>
+            <StatCard
+              icon="👥"
+              value="100+"
+              label="Active Members"
+              description="Students from all skill levels"
+            />
+          </Col>
+          <Col md={3} sm={6}>
+            <StatCard
+              icon="📅"
+              value="1998"
+              label="Year Founded"
+              description="Over 25 years of excellence"
+            />
+          </Col>
+          <Col md={3} sm={6}>
+            <StatCard
+              icon="🏆"
+              value="10"
+              label="Tournament Wins"
+              description="Regional and national titles"
+            />
+          </Col>
+          <Col md={3} sm={6}>
+            <StatCard
+              icon="🎾"
+              value="3x/week"
+              label="Practice Sessions"
+              description="Year-round training"
             />
           </Col>
         </Row>
