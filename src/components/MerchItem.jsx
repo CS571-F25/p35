@@ -16,8 +16,18 @@ function MerchItem({ name, price, image, description }) {
 
   return (
     <Card className="h-100">
-      <div style={{ position: 'relative' }}>
-        <Card.Img variant="top" src={image} alt={name} />
+      <div style={{ position: 'relative', height: '300px', backgroundColor: '#f8f9fa', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Card.Img
+          variant="top"
+          src={image}
+          alt={name}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain',
+            padding: '10px'
+          }}
+        />
         <Button
           variant="link"
           onClick={handleToggleLike}
@@ -37,6 +47,7 @@ function MerchItem({ name, price, image, description }) {
             padding: 0,
             border: 'none',
             boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+            zIndex: 1
           }}
           aria-label={liked ? 'Unlike item' : 'Like item'}
         >

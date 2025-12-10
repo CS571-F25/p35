@@ -3,24 +3,24 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 function AboutUs() {
   const teamMembers = [
     {
-      name: "President",
+      name: "Khaled Saleh",
       role: "Club President",
-      image: "https://via.placeholder.com/200x200?text=President"
+      image: "/p35/images/board/WiscoKhaled.jpg"
     },
     {
-      name: "Vice President",
+      name: "Justin Jan",
       role: "Vice President",
-      image: "https://via.placeholder.com/200x200?text=VP"
+      image: "/p35/images/board/WiscoJustin.jpg"
     },
     {
-      name: "Treasurer",
+      name: "Sriram Arvind",
       role: "Treasurer",
-      image: "https://via.placeholder.com/200x200?text=Treasurer"
+      image: "/p35/images/board/WiscoSriram.jpg"
     },
     {
-      name: "Events Coordinator",
-      role: "Events Coordinator",
-      image: "https://via.placeholder.com/200x200?text=Events"
+      name: "Sonia Mehta",
+      role: "Tournament Coordinator",
+      image: "/p35/images/board/WiscoSonia.jpg"
     }
   ];
 
@@ -50,7 +50,7 @@ function AboutUs() {
         <Col>
           <h2 className="mb-3">Team Photo</h2>
           <img
-            src="https://via.placeholder.com/1000x600?text=Team+Group+Photo+-+Add+Your+Own"
+            src="/p35/images/WiscoTeamPhoto.jpg"
             alt="Complete UW-Madison Club Tennis team group photo with all members"
             className="img-fluid rounded"
           />
@@ -113,7 +113,7 @@ function AboutUs() {
             <Card.Body>
               <h2>Our History</h2>
               <p>
-                Founded in [Year], UW-Madison Club Tennis has grown from a small
+                Founded in 1998, UW-Madison Club Tennis has grown from a small
                 group of tennis enthusiasts to one of the most active club sports
                 on campus. Over the years, we've competed in numerous regional
                 and national tournaments, building a tradition of excellence both

@@ -103,7 +103,7 @@ function ContactUs() {
               </p>
               <p>
                 <strong>Phone:</strong><br />
-                (608) 555-TNNS
+                (608) 555-1234
               </p>
               <p>
                 <strong>Location:</strong><br />
@@ -135,13 +135,7 @@ function ContactUs() {
               <h2>Social Media</h2>
               <hr />
               <p className="mb-1">
-                <strong>Instagram:</strong> @uwclubtennis
-              </p>
-              <p className="mb-1">
-                <strong>Facebook:</strong> UW Club Tennis
-              </p>
-              <p className="mb-0">
-                <strong>Twitter:</strong> @UWClubTennis
+                <strong>Instagram:</strong> @badgerclubtennis
               </p>
             </Card.Body>
           </Card>

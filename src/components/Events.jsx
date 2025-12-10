@@ -195,21 +195,21 @@ function Events() {
           <Row>
             <Col md={4} className="mb-3">
               <img
-                src="https://via.placeholder.com/400x300?text=Tournament+Action"
+                src="/p35/images/events/WiscoEvent1.jpg"
                 alt="Club tennis team members competing in tournament action shot"
                 className="img-fluid rounded"
               />
             </Col>
             <Col md={4} className="mb-3">
               <img
-                src="https://via.placeholder.com/400x300?text=Practice+Session"
+                src="/p35/images/events/WiscoEvent2.jpg"
                 alt="Team members practicing tennis drills at practice session"
                 className="img-fluid rounded"
               />
             </Col>
             <Col md={4} className="mb-3">
               <img
-                src="https://via.placeholder.com/400x300?text=Team+Competition"
+                src="/p35/images/events/WiscoEvent3.jpg"
                 alt="Club tennis team during competitive match event"
                 className="img-fluid rounded"
               />

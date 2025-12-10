@@ -6,55 +6,55 @@ function Merch() {
     {
       name: "Club T-Shirt",
       price: 24.99,
-      image: "https://via.placeholder.com/300x300?text=Club+T-Shirt",
+      image: "/p35/images/merch/WiscoRedShirt.jpg",
       description: "100% cotton t-shirt with club logo. Available in red and white."
     },
     {
       name: "Tennis Cap",
       price: 18.99,
-      image: "https://via.placeholder.com/300x300?text=Tennis+Cap",
+      image: "/p35/images/merch/WiscoCapRed.jpg",
       description: "Adjustable cap perfect for sunny days on the court."
     },
     {
       name: "Team Hoodie",
       price: 44.99,
-      image: "https://via.placeholder.com/300x300?text=Team+Hoodie",
+      image: "/p35/images/merch/WiscoHoodie.jpg",
       description: "Warm and comfortable hoodie with embroidered logo."
     },
     {
       name: "Water Bottle",
       price: 14.99,
-      image: "https://via.placeholder.com/300x300?text=Water+Bottle",
+      image: "/p35/images/merch/WiscoWaterbottle.jpg",
       description: "32oz insulated water bottle keeps drinks cold for hours."
     },
     {
       name: "Tennis Bag",
       price: 54.99,
-      image: "https://via.placeholder.com/300x300?text=Tennis+Bag",
+      image: "/p35/images/merch/WiscoTennisBag.jpg",
       description: "Spacious bag with compartments for rackets and gear."
     },
     {
       name: "Wristbands Set",
       price: 9.99,
-      image: "https://via.placeholder.com/300x300?text=Wristbands",
+      image: "/p35/images/merch/WiscoWristbands.jpg",
       description: "Set of 2 moisture-wicking wristbands in team colors."
     },
     {
       name: "Drawstring Backpack",
       price: 12.99,
-      image: "https://via.placeholder.com/300x300?text=Backpack",
+      image: "/p35/images/merch/WiscoDrawstring.jpg",
       description: "Lightweight drawstring bag perfect for practice."
     },
     {
       name: "Club Sticker Pack",
       price: 5.99,
-      image: "https://via.placeholder.com/300x300?text=Stickers",
+      image: "/p35/images/merch/WiscoStickers.jpg",
       description: "Set of 5 waterproof stickers featuring club designs."
     },
     {
       name: "Performance Polo",
       price: 34.99,
-      image: "https://via.placeholder.com/300x300?text=Polo+Shirt",
+      image: "/p35/images/merch/WiscoPolo.jpg",
       description: "Moisture-wicking polo shirt ideal for matches."
     }
   ];

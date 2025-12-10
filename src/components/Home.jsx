@@ -39,7 +39,7 @@ function Home() {
         <Row>
           <Col>
             <img
-              src="https://via.placeholder.com/1200x400?text=Team+Photo+-+Add+Your+Own"
+              src="/p35/images/WiscoTeamPhoto.jpg"
               alt="UW-Madison Club Tennis team group photo at practice"
               className="img-fluid rounded"
             />
