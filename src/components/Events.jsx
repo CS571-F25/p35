@@ -1,11 +1,16 @@
-import { Container, Row, Col, Tabs, Tab } from 'react-bootstrap';
+import { Container, Row, Col, Tabs, Tab, Form, InputGroup } from 'react-bootstrap';
+import { useState } from 'react';
 import EventCard from './EventCard';
 
 function Events() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortOrder, setSortOrder] = useState('asc');
+
   const practices = [
     {
       title: "Weekly Practice Session",
       date: "Every Tuesday & Thursday",
+      dateSort: new Date('2025-01-07'),
       time: "6:00 PM - 8:00 PM",
       location: "Nielsen Tennis Stadium",
       type: "practice",
@@ -14,6 +19,7 @@ function Events() {
     {
       title: "Advanced Training",
       date: "Every Saturday",
+      dateSort: new Date('2025-01-11'),
       time: "9:00 AM - 11:00 AM",
       location: "Nielsen Tennis Stadium",
       type: "practice",
@@ -24,7 +30,8 @@ function Events() {
   const tryouts = [
     {
       title: "Spring Semester Tryouts",
-      date: "April 1, 2024",
+      date: "April 1, 2025",
+      dateSort: new Date('2025-04-01'),
       time: "5:00 PM - 7:00 PM",
       location: "Nielsen Tennis Stadium",
       type: "tryout",
@@ -32,7 +39,8 @@ function Events() {
     },
     {
       title: "Fall Semester Tryouts",
-      date: "September 15, 2024",
+      date: "September 15, 2025",
+      dateSort: new Date('2025-09-15'),
       time: "5:00 PM - 7:00 PM",
       location: "Nielsen Tennis Stadium",
       type: "tryout",
@@ -43,7 +51,8 @@ function Events() {
   const tournaments = [
     {
       title: "Big Ten Club Tennis Championship",
-      date: "April 20-21, 2024",
+      date: "April 20-21, 2025",
+      dateSort: new Date('2025-04-20'),
       time: "All Day",
       location: "University of Illinois",
       type: "tournament",
@@ -51,7 +60,8 @@ function Events() {
     },
     {
       title: "Wisconsin Intercollegiate Tournament",
-      date: "May 5, 2024",
+      date: "May 5, 2025",
+      dateSort: new Date('2025-05-05'),
       time: "8:00 AM - 6:00 PM",
       location: "Madison Tennis Center",
       type: "tournament",
@@ -59,7 +69,8 @@ function Events() {
     },
     {
       title: "Midwest Regional Championships",
-      date: "May 18-19, 2024",
+      date: "May 18-19, 2025",
+      dateSort: new Date('2025-05-18'),
       time: "All Day",
       location: "Chicago, IL",
       type: "tournament",
@@ -67,44 +78,113 @@ function Events() {
     }
   ];
 
+  // Combine all events
+  const allEvents = [...practices, ...tryouts, ...tournaments];
+
+  // Filter events based on search query
+  const filterEvents = (events) => {
+    if (!searchQuery.trim()) return events;
+
+    const query = searchQuery.toLowerCase();
+    return events.filter(event =>
+      event.title.toLowerCase().includes(query) ||
+      event.description.toLowerCase().includes(query) ||
+      event.location.toLowerCase().includes(query) ||
+      event.type.toLowerCase().includes(query)
+    );
+  };
+
+  // Sort events by date
+  const sortEvents = (events) => {
+    return [...events].sort((a, b) => {
+      if (sortOrder === 'asc') {
+        return a.dateSort - b.dateSort;
+      } else {
+        return b.dateSort - a.dateSort;
+      }
+    });
+  };
+
+  // Apply filters and sorting
+  const getFilteredAndSortedEvents = (events) => {
+    const filtered = filterEvents(events);
+    return sortEvents(filtered);
+  };
+
+  const filteredPractices = getFilteredAndSortedEvents(practices);
+  const filteredTryouts = getFilteredAndSortedEvents(tryouts);
+  const filteredTournaments = getFilteredAndSortedEvents(tournaments);
+  const filteredAllEvents = getFilteredAndSortedEvents(allEvents);
+
   return (
     <Container fluid className="my-5">
       <h1 className="mb-4">Events</h1>
 
+      {/* Search and Sort Controls */}
+      <Row className="mb-4">
+        <Col md={8}>
+          <InputGroup>
+            <InputGroup.Text>🔍</InputGroup.Text>
+            <Form.Control
+              type="text"
+              placeholder="Search events by title, description, location, or type..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              aria-label="Search events"
+            />
+          </InputGroup>
+        </Col>
+        <Col md={4}>
+          <Form.Select
+            value={sortOrder}
+            onChange={(e) => setSortOrder(e.target.value)}
+            aria-label="Sort events by date"
+          >
+            <option value="asc">Sort by Date (Earliest First)</option>
+            <option value="desc">Sort by Date (Latest First)</option>
+          </Form.Select>
+        </Col>
+      </Row>
+
       <Tabs defaultActiveKey="all" className="mb-4">
         <Tab eventKey="all" title="All Events">
-          <h2 className="mb-3">Practices</h2>
-          {practices.map((event, index) => (
-            <EventCard key={index} {...event} />
-          ))}
-
-          <h2 className="mb-3 mt-4">Tryouts</h2>
-          {tryouts.map((event, index) => (
-            <EventCard key={index} {...event} />
-          ))}
-
-          <h2 className="mb-3 mt-4">Tournaments</h2>
-          {tournaments.map((event, index) => (
-            <EventCard key={index} {...event} />
-          ))}
+          {filteredAllEvents.length > 0 ? (
+            filteredAllEvents.map((event, index) => (
+              <EventCard key={index} {...event} />
+            ))
+          ) : (
+            <p className="text-muted">No events match your search criteria.</p>
+          )}
         </Tab>
 
         <Tab eventKey="practices" title="Practices">
-          {practices.map((event, index) => (
-            <EventCard key={index} {...event} />
-          ))}
+          {filteredPractices.length > 0 ? (
+            filteredPractices.map((event, index) => (
+              <EventCard key={index} {...event} />
+            ))
+          ) : (
+            <p className="text-muted">No practice sessions match your search criteria.</p>
+          )}
         </Tab>
 
         <Tab eventKey="tryouts" title="Tryouts">
-          {tryouts.map((event, index) => (
-            <EventCard key={index} {...event} />
-          ))}
+          {filteredTryouts.length > 0 ? (
+            filteredTryouts.map((event, index) => (
+              <EventCard key={index} {...event} />
+            ))
+          ) : (
+            <p className="text-muted">No tryouts match your search criteria.</p>
+          )}
         </Tab>
 
         <Tab eventKey="tournaments" title="Tournaments">
-          {tournaments.map((event, index) => (
-            <EventCard key={index} {...event} />
-          ))}
+          {filteredTournaments.length > 0 ? (
+            filteredTournaments.map((event, index) => (
+              <EventCard key={index} {...event} />
+            ))
+          ) : (
+            <p className="text-muted">No tournaments match your search criteria.</p>
+          )}
         </Tab>
       </Tabs>
 

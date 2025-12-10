@@ -24,7 +24,7 @@ function Footer() {
         </Row>
         <Row className="mt-3">
           <Col className="text-center">
-            <p className="mb-0">&copy; 2024 UW-Madison Club Tennis. All rights reserved.</p>
+            <p className="mb-0">&copy; 2025 UW-Madison Club Tennis. All rights reserved.</p>
           </Col>
         </Row>
       </Container>

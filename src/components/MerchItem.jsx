@@ -48,7 +48,7 @@ function MerchItem({ name, price, image, description }) {
         <Card.Text className="flex-grow-1">{description}</Card.Text>
         <div className="d-flex justify-content-between align-items-center mt-auto">
           <h5 className="mb-0">${price}</h5>
-          <Button variant="primary" onClick={handleAddToCart}>
+          <Button variant="danger" onClick={handleAddToCart}>
             Add to Cart
           </Button>
         </div>
