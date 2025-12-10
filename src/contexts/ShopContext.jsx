@@ -24,7 +24,19 @@ export function ShopProvider({ children }) {
   // Track event headcounts globally (cumulative across all users/sessions)
   const [eventHeadcounts, setEventHeadcounts] = useState(() => {
     const savedHeadcounts = sessionStorage.getItem('eventHeadcounts');
-    return savedHeadcounts ? JSON.parse(savedHeadcounts) : {};
+    if (savedHeadcounts) {
+      return JSON.parse(savedHeadcounts);
+    }
+    // Default headcounts for demo purposes
+    return {
+      'Weekly Practice Session': 24,
+      'Advanced Training': 15,
+      'Spring Semester Tryouts': 32,
+      'Fall Semester Tryouts': 0,
+      'Big Ten Club Tennis Championship': 18,
+      'Wisconsin Intercollegiate Tournament': 27,
+      'Midwest Regional Championships': 12
+    };
   });
 
   useEffect(() => {
