@@ -1,4 +1,5 @@
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import NewsCard from './NewsCard';
 
 function Home() {
@@ -27,7 +28,7 @@ function Home() {
         <Container fluid>
           <h1 className="display-4">Welcome to UW-Madison Club Tennis</h1>
           <p className="lead">Join us for competitive play, skill development, and community!</p>
-          <Button variant="light" size="lg" href="/p35/events">View Upcoming Events</Button>
+          <Button as={Link} to="/events" variant="light" size="lg">View Upcoming Events</Button>
         </Container>
       </div>
 
